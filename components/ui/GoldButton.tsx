@@ -7,6 +7,7 @@ interface GoldButtonProps {
   className?: string;
   variant?: 'primary' | 'outline';
   type?: 'button' | 'submit';
+  disabled?: boolean;
 }
 
 export const GoldButton: React.FC<GoldButtonProps> = ({
@@ -14,7 +15,8 @@ export const GoldButton: React.FC<GoldButtonProps> = ({
   onClick,
   className = '',
   variant = 'primary',
-  type = 'button'
+  type = 'button',
+  disabled = false,
 }) => {
   const baseStyles = 'px-8 py-3 rounded-full font-body font-medium transition-all duration-300 flex items-center justify-center';
   const variants = {
@@ -28,7 +30,10 @@ export const GoldButton: React.FC<GoldButtonProps> = ({
       whileTap={{ scale: 0.98 }}
       type={type}
       onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${className}`}
+      disabled={disabled}
+      className={`${baseStyles} ${variants[variant]} ${className} ${
+        disabled ? 'opacity-50 cursor-not-allowed' : ''
+      }`}
     >
       {children}
     </motion.button>

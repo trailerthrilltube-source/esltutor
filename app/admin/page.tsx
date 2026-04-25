@@ -1,4 +1,6 @@
 import React from 'react';
+import { supabase } from '@/lib/supabase';
+import { GoldButton } from '@/components/ui/GoldButton';
 
 export default function AdminLoginPage() {
   const handleLogin = async (e: React.FormEvent) => {

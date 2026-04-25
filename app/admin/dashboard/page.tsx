@@ -1,7 +1,9 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { supabase } from '@/lib/supabase';
-import { GoldButton } from '../ui/GoldButton';
+import { GoldButton } from '@/components/ui/GoldButton';
+import { MediaUploader } from '@/components/admin/MediaUploader';
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('bookings');
